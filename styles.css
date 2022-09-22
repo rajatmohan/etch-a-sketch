@@ -1,0 +1,50 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header, footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    height: 75px;
+}
+
+main {
+    flex: 1;
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+footer {
+    height: 25px;
+}
+
+.actions-container {
+    flex-grow: 0; 
+}
+.grid-container {
+    flex-grow: 0; 
+    display: grid;
+    gap: 1px;
+    width: 500px;
+    height: 500px;
+}
+
+.grid-item {
+    background-color: white;
+}
