@@ -56,7 +56,7 @@ const createGrid = (numberRows, numberColumns)=> {
 
 const gridSizeChooseBtn = document.querySelector("#gridSize")
 gridSizeChooseBtn.addEventListener("click", (event)=> {
-    let numberCellsPerSide = parseInt(prompt("Enter number of squares per side beteen 1 and 100."));
+    let numberCellsPerSide = parseInt(prompt("Enter number of squares per side between 1 and 100."));
     if(isNaN(numberCellsPerSide) || numberCellsPerSide <= 0 || numberCellsPerSide > 100) {
         alert("Wrong Input");
     }
