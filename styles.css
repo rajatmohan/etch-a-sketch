@@ -9,6 +9,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: antiquewhite;
 }
 
 header, footer {
@@ -23,7 +24,6 @@ header {
 
 main {
     flex: 1;
-    background-color: antiquewhite;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,6 +44,7 @@ footer {
     gap: 1px;
     width: 500px;
     height: 500px;
+    background-color: black;
 }
 
 .grid-item {

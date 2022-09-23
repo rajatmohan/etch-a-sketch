@@ -4,16 +4,31 @@ const generateRandomNo = (n) => {
 }
 
 const generateRandomColor = () => {
-    // Color maximum value in hexadecimal would be 0xFFFFFF
-    // One Number greater than maximum color would be 0x1000000
+    // Color maximum value in hexadecimal would be 0xFFFFFF(2^24-1)
+    // One Number greater than maximum color would be 0x1000000(2^24)
     // toString(16) convert number into hexadecimal string representation 
     return '#'+generateRandomNo(0x1000000).toString(16);;
 }
 
 const divMouseEnter = (event)=> {
     const divEle = event.target;
-    divEle.classList.add("visited");
-    divEle.style.backgroundColor = generateRandomColor();
+    let divcolor = divEle.style.backgroundColor;
+    if(divEle.classList.contains("visited") && divcolor !== '') {
+        let divcolor = divEle.style.backgroundColor;
+        let colorArr = divcolor.slice(
+            divcolor.indexOf("(") + 1, 
+            divcolor.indexOf(")")
+        ).split(", ");
+        
+        // making it more transparent
+        let newOpacity = Math.max(0, Number((colorArr[3] === undefined)?1:colorArr[3])-0.1);
+        divEle.style.backgroundColor = `rgba(${colorArr[0]}, ${colorArr[1]}, ${colorArr[2]}, ${newOpacity})`;
+    }
+    else {
+        let color = generateRandomColor();
+        divEle.classList.add("visited");
+        divEle.style.backgroundColor = color;
+    }
 }
 
 const createGridCell = (rowNo, columnNo)=> {
